@@ -1,11 +1,9 @@
-import React from "react";
+test("displays the text 'please pass this test'", () => {
+  render(<Article />);
 
-function Article() {
-  return (
-    <div>
-      {/* please pass this test */}
-    </div>
-  );
-}
+  const element = screen.queryByText("please pass this test");
 
-export default Article;
+  screen.debug(element);
+
+  expect(element).toBeInTheDocument();
+});
